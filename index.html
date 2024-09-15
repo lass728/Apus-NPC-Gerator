@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Charsets</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            text-align: center;
+            width: 1000px;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            width: 48%;
+        }
+        label {
+            display: block;
+            font-size: 16px;
+            color: #555;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        select:focus {
+            border-color: #007bff;
+        }
+        .canvas-container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .canvas-container canvas {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        .canvas-preview {
+            
+            width: 200px;
+            height: 200px;
+        }
+        .download-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador NPC Apu</h1>
+
+        <div class="form-container">
+            <div class="form-group">
+                <label for="corpo">Corpo:</label>
+                <select id="corpo">
+                    <option value="corpo1.png">Corpo 1</option>
+                    <option value="corpo2.png">Corpo 2</option>
+                    <option value="corpo4.png">Corpo 3</option>
+                </select>
+
+                <label for="roupa">Roupa:</label>
+                <select id="roupa">
+                    <option value="">Sem Roupa</option>
+                    <option value="roupa6.png">Camisa 1</option>
+                    <option value="roupa1.png">Camisa 2</option>
+                    <option value="roupa4.png">Camisa 3</option>
+                    <option value="roupa7.png">Camisa 4</option>
+                    <option value="roupa2.png">Moletom</option>
+                    <option value="roupa3.png">Kimono</option>
+                    <option value="roupa5.png">Jardineira</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cabelo">Cabelo:</label>
+                <select id="cabelo">
+                    <option value="">Sem Cabelo</option>
+                    <option value="cabelo1.png">Masculino 1</option>
+                    <option value="cabelo2.png">Masculino 2</option>
+                    <option value="cabelo7.png">Masculino 3</option>
+                    <option value="cabelo3.png">Masculino 4</option>
+                    <option value="cabelo8.png">Masculino 5</option>
+                    <option value="cabelo4.png">Feminino 1</option>
+                    <option value="cabelo5.png">Feminino 2</option>
+                    <option value="cabelo6.png">Feminino 3</option>
+                    <option value="cabelo9.png">Feminino 4</option>
+                </select>
+
+                <label for="acessorio">Acessório:</label>
+                <select id="acessorio">
+                    <option value="">Sem Acessório</option>
+                    <option value="acessorio3.png">Boné</option>
+                    <option value="bone.png">Boné 2</option>
+                    <option value="acessorio4.png">Boina</option>
+                    <option value="acessorio1.png">Óculos</option>
+                    <option value="Orelhas.png">Orelhas</option>
+                    <option value="Chifres.png">Chifres</option>
+                    <option value="capa.png">Capa</option>
+                    <option value="Saco2.png">Sacola</option>
+                    <option value="curativo.png">Curativo</option>
+                    <option value="trança.png">Trancinhas</option>
+                    <option value="acessorio2.png">Gosma</option>
+                    <option value="acessorio5.png">Chapéu de Palha</option>
+                    <option value="marca.png">Olheira</option>
+                    <option value="old.png">Idoso</option>
+                </select>
+
+                <label for="acessorio2">Acessório 2:</label>
+                <select id="acessorio2">
+                    <option value="">Sem Acessório</option>
+                    <option value="acessorio3.png">Boné</option>
+                    <option value="bone.png">Boné 2</option>
+                    <option value="acessorio4.png">Boina</option>
+                    <option value="acessorio1.png">Óculos</option>
+                    <option value="Orelhas.png">Orelhas</option>
+                    <option value="Chifres.png">Chifres</option>
+                    <option value="capa.png">Capa</option>
+                    <option value="Saco2.png">Sacola</option>
+                    <option value="curativo.png">Curativo</option>
+                    <option value="trança.png">Trancinhas</option>
+                    <option value="acessorio2.png">Gosma</option>
+                    <option value="acessorio5.png">Chapéu de Palha</option>
+                    <option value="marca.png">Olheira</option>
+                    <option value="old.png">Idoso</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="canvas" width="144" height="192"></canvas>
+            <div class="canvas-preview">
+                <canvas id="preview" width="200" height="200"></canvas>
+            </div>
+        </div>
+        
+        <div class="download-container">
+            <button id="downloadBtn">Resultado</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        const previewCanvas = document.getElementById('preview');
+        const previewCtx = previewCanvas.getContext('2d');
+
+        const corpoSelect = document.getElementById('corpo');
+        const cabeloSelect = document.getElementById('cabelo');
+        const roupaSelect = document.getElementById('roupa');
+        const acessorioSelect = document.getElementById('acessorio');
+        const acessorioSelect2 = document.getElementById('acessorio2');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        function loadImage(src) {
+            return new Promise((resolve, reject) => {
+                if (!src) {
+                    resolve(null);
+                } else {
+                    const img = new Image();
+                    img.src = `assets/${src}`;
+                    img.onload = () => resolve(img);
+                    img.onerror = () => resolve(null);
+                }
+            });
+        }
+
+        async function desenharPersonagem() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            previewCtx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
+
+            const corpo = await loadImage(`corpo/${corpoSelect.value}`);
+            const cabelo = await loadImage(`cabelo/${cabeloSelect.value}`);
+            const roupa = await loadImage(`roupa/${roupaSelect.value}`);
+            const acessorio = await loadImage(`acessorio/${acessorioSelect.value}`);
+            const acessorio2 = await loadImage(`acessorio2/${acessorioSelect2.value}`);
+
+            if (corpo) ctx.drawImage(corpo, 0, 0, 144, 192);
+            
+            if (roupa) ctx.drawImage(roupa, 0, 0, 144, 192);
+
+            if (cabelo) ctx.drawImage(cabelo, 0, 0, 144, 192);
+
+            if (acessorio) ctx.drawImage(acessorio, 0, 0, 144, 192);
+            if (acessorio2) ctx.drawImage(acessorio2, 0, 0, 144, 192);
+            
+
+            const spriteSize = 48; // Tamanho da célula do sprite no conjunto
+previewCtx.imageSmoothingEnabled = false; // Desativa a suavização da imagem
+previewCtx.drawImage(canvas, 48, 0, spriteSize, spriteSize, 0, 0, 200, 200);
+        }
+
+        corpoSelect.addEventListener('change', desenharPersonagem);
+        cabeloSelect.addEventListener('change', desenharPersonagem);
+        roupaSelect.addEventListener('change', desenharPersonagem);
+        acessorioSelect.addEventListener('change', desenharPersonagem);
+        acessorioSelect2.addEventListener('change', desenharPersonagem);
+
+        downloadBtn.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.download = 'personagem.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        });
+
+        desenharPersonagem();
+    </script>
+</body>
+</html>
