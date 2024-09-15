@@ -100,6 +100,7 @@
         <h1>Gerador NPC Apu</h1>
 
         <div class="form-container">
+
             <div class="form-group">
                 <label for="corpo">Corpo:</label>
                 <select id="corpo">
@@ -119,7 +120,28 @@
                     <option value="roupa3.png">Kimono</option>
                     <option value="roupa5.png">Jardineira</option>
                 </select>
+
+
+                <label for="rosto">Rosto:</label>
+            <select id="rosto">
+                <option value="">Nada</option>
+                <option value="curativo.png">Curativo</option>
+                <option value="brush.png">Brush</option>
+                <option value="sombra.png">Sombra</option>
+                <option value="zangado.png">Zangado</option>
+                <option value="zangado2.png">Zangado 2</option>
+                <option value="cicatriz.png">Cicatriz</option>
+                <option value="marca.png">Olheira</option>
+                <option value="nerdola.png">Nerdola</option>
+                <option value="pirata.png">Tapa-Olho</option>
+
+            </select>
+
             </div>
+
+
+
+
 
             <div class="form-group">
                 <label for="cabelo">Cabelo:</label>
@@ -149,11 +171,12 @@
                     <option value="horn.png">Chifre</option>
                     <option value="capa.png">Capa</option>
                     <option value="Saco2.png">Sacola</option>
-                    <option value="curativo.png">Curativo</option>
+                    
                     <option value="trança.png">Trancinhas</option>
                     <option value="acessorio2.png">Gosma</option>
                     <option value="acessorio5.png">Chapéu de Palha</option>
                     <option value="marca.png">Olheira</option>
+                    <option value="nerdola.png">Nerdola</option>
                     <option value="old.png">Idoso</option>
                 </select>
 
@@ -168,11 +191,12 @@
                     <option value="horn.png">Chifre</option>
                     <option value="capa.png">Capa</option>
                     <option value="Saco2.png">Sacola</option>
-                    <option value="curativo.png">Curativo</option>
+                    
                     <option value="trança.png">Trancinhas</option>
                     <option value="acessorio2.png">Gosma</option>
                     <option value="acessorio5.png">Chapéu de Palha</option>
                     <option value="marca.png">Olheira</option>
+                    <option value="nerdola.png">Nerdola</option>
                     <option value="old.png">Idoso</option>
                 </select>
             </div>
@@ -199,6 +223,9 @@
 
         const corpoSelect = document.getElementById('corpo');
         const cabeloSelect = document.getElementById('cabelo');
+
+        const rostoSelect = document.getElementById('rosto');
+
         const roupaSelect = document.getElementById('roupa');
         const acessorioSelect = document.getElementById('acessorio');
         const acessorioSelect2 = document.getElementById('acessorio2');
@@ -222,6 +249,7 @@
             previewCtx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
 
             const corpo = await loadImage(`corpo/${corpoSelect.value}`);
+            const rosto = await loadImage(`rosto/${rostoSelect.value}`);
             const cabelo = await loadImage(`cabelo/${cabeloSelect.value}`);
             const roupa = await loadImage(`roupa/${roupaSelect.value}`);
             const acessorio = await loadImage(`acessorio/${acessorioSelect.value}`);
@@ -230,6 +258,8 @@
             if (corpo) ctx.drawImage(corpo, 0, 0, 144, 192);
             
             if (roupa) ctx.drawImage(roupa, 0, 0, 144, 192);
+
+            if (rosto) ctx.drawImage(rosto, 0, 0, 144, 192);
 
             if (cabelo) ctx.drawImage(cabelo, 0, 0, 144, 192);
 
@@ -243,6 +273,7 @@ previewCtx.drawImage(canvas, 48, 0, spriteSize, spriteSize, 0, 0, 200, 200);
         }
 
         corpoSelect.addEventListener('change', desenharPersonagem);
+        rostoSelect.addEventListener('change', desenharPersonagem);
         cabeloSelect.addEventListener('change', desenharPersonagem);
         roupaSelect.addEventListener('change', desenharPersonagem);
         acessorioSelect.addEventListener('change', desenharPersonagem);
